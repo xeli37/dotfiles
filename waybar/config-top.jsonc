@@ -1,0 +1,95 @@
+{
+	"name": "top-bar",
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    //"height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "margin-left": 4,
+    "margin-right": 4,
+    "spacing": 0, // Gaps between modules (px)
+    // Choose the order of the modules
+    "modules-left": [
+        "cpu",
+        "memory",
+        "temperature",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "tray",
+        "clock"
+    ],
+    // Modules configuration
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+          "default": "",
+          "active": ""
+        },
+        "persistent-workspaces": {
+          "*": 2
+        },
+        "disable-scroll": true,
+        "all-outputs": true,
+        "show-special": true
+      },
+    "tray": {
+        "spacing": 8
+        // "icons": {
+        //   "blueman": "bluetooth",
+        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        // }
+    },
+    "clock": {
+        "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureF}°F {icon}",
+        "format": "{temperatureF}°F {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) {bandwidthTotalBytes} ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} \nup:{bandwidthUpBytes}\ndown:{bandwidthDownBytes}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source} ",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    }
+}
