@@ -1,0 +1,20 @@
+{
+	"name": "bottom-bar",
+    "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "exclusive": false,
+    "spacing": 0, // Gaps between modules (px)
+    // Choose the order of the modules
+    "modules-center": [
+        "wlr/taskbar"
+    ],
+    // Modules configuration
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 64,
+      "on-click-middle": "close",
+      "tooltip-format": "{title}",
+      "ignore-list": [],
+      "on-click": "activate"
+    }
+}

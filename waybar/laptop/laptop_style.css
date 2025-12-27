@@ -1,0 +1,148 @@
+@import "colors.css";
+
+*:not(button) {
+  border: none;
+  border-radius: 1rem;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 1rem;
+  min-height: .75rem;
+}
+button {
+  border: none;
+  font-family: "JetBrainsMono Nerd Font";
+  min-height: .75rem;
+}
+
+window.top-bar#waybar {
+  background: rgba(0, 0, 0, .25);
+}
+
+window.top-bar#waybar.hidden {
+  opacity: 0.2;
+}
+
+window.bottom-bar#waybar {
+  background: rgba(0, 0, 0, 0);
+}
+
+window.bottom-bar#waybar.hidden {
+  opacity: 0.2;
+}
+
+#window {
+  background: rgba(0, 0, 0, 0.5);
+  color: @on_surface;
+}
+
+#cpu,
+#memory,
+#temperature,
+#window,
+#pulseaudio,
+#network,
+#tray,
+#battery,
+#clock {
+  padding: .2rem 1rem;
+  margin: .25rem .5rem;
+}
+
+#workspaces {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#workspaces button {
+  color: @secondary;
+  background: transparent;
+  padding: .5rem .5rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transition 0.3s ease;
+}
+
+#workspaces button.occupied {
+  color: #A6E3A1;
+}
+
+#workspaces button.active {
+  color: @primary;
+  text-shadow: 0 0 .25rem @on_primary;
+}
+
+#workspaces button:hover {
+  color: @tertiary;
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+#workspaces button.active:hover {
+
+}
+
+#cpu {
+    background-color: @secondary;
+    color: #000000;
+}
+
+#memory {
+    background-color: @primary;
+}
+
+#temperature {
+    background-color: @tertiary;
+}
+
+#temperature.critical {
+    background-color: @error;
+}
+
+#pulseaudio {
+    background-color: @primary;
+    color: #000000;
+}
+
+#pulseaudio:hover {
+    background-color: @inverse_primary;
+}
+
+#wireplumber {
+    background-color: #fff0f5;
+    color: #000000;
+}
+
+#wireplumber.muted {
+    background-color: #f53c3c;
+}
+
+#network {
+    background-color: @tertiary;
+}
+
+#network.disconnected {
+    background-color: @error;
+}
+
+#tray {
+    background-color: @secondary;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#battery {
+    background-color: @on_secondary_fixed;
+    color: @secondary;
+}
+
+#clock {
+    background-color: @on_tertiary_fixed;
+    color: @tertiary;
+}
+
+#taskbar {
+	background: rgba(0, 0, 0, 0.5);
+}
